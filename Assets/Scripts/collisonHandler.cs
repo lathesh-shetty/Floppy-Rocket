@@ -86,7 +86,7 @@ void loadNextlevel()
 {
 int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 int nextSceneIndex = currentSceneIndex+1;
- if(nextSceneIndex>SceneManager.sceneCount)
+ if(nextSceneIndex>3)
 {
     nextSceneIndex = 0;
 }

@@ -451,8 +451,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Scene_tA1DC762B79745EB5140F054C884855B9223183
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Scene_get_buildIndex_m82B6E0C96C85C952B7A2D794DB73CDA99AA9A57E (Scene_tA1DC762B79745EB5140F054C884855B922318356* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.SceneManagement.SceneManager::LoadScene(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManager_LoadScene_mE00D17D79AD74B307F913BBF296A36115548DB6D (int32_t ___sceneBuildIndex0, const RuntimeMethod* method) ;
-// System.Int32 UnityEngine.SceneManagement.SceneManager::get_sceneCount()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SceneManager_get_sceneCount_mDB2658B632F95AB171E500C1519A681507B9230B (const RuntimeMethod* method) ;
 // System.Void UnityEngine.MonoBehaviour::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
 // T UnityEngine.Component::GetComponent<UnityEngine.Rigidbody>()
@@ -775,13 +773,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void collisonHandler_loadNextlevel_m3C3D8C76B
 		L_1 = Scene_get_buildIndex_m82B6E0C96C85C952B7A2D794DB73CDA99AA9A57E((&V_1), NULL);
 		// int nextSceneIndex = currentSceneIndex+1;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_1, 1));
-		// if(nextSceneIndex>SceneManager.sceneCount)
+		// if(nextSceneIndex>3)
 		int32_t L_2 = V_0;
-		int32_t L_3;
-		L_3 = SceneManager_get_sceneCount_mDB2658B632F95AB171E500C1519A681507B9230B(NULL);
-		if ((((int32_t)L_2) <= ((int32_t)L_3)))
+		if ((((int32_t)L_2) <= ((int32_t)3)))
 		{
-			goto IL_001a;
+			goto IL_0016;
 		}
 	}
 	{
@@ -789,12 +785,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void collisonHandler_loadNextlevel_m3C3D8C76B
 		V_0 = 0;
 	}
 
-IL_001a:
+IL_0016:
 	{
 		// SceneManager.LoadScene(nextSceneIndex);
-		int32_t L_4 = V_0;
+		int32_t L_3 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
-		SceneManager_LoadScene_mE00D17D79AD74B307F913BBF296A36115548DB6D(L_4, NULL);
+		SceneManager_LoadScene_mE00D17D79AD74B307F913BBF296A36115548DB6D(L_3, NULL);
 		// }
 		return;
 	}
