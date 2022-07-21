@@ -13,10 +13,28 @@ public class collisonHandler : MonoBehaviour
    [SerializeField] ParticleSystem crashParticles;
 
    bool isTransitioning = false;
+   bool collisionDisable = false;
+
+   void Update()
+   {
+    cheats();
+   }
+   
+   void cheats()
+   {
+    if(Input.GetKeyDown(KeyCode.L))
+    {
+     loadNextlevel();
+    }
+    else if(Input.GetKeyDown(KeyCode.C))
+    {
+    collisionDisable = !collisionDisable;
+    }
+   }
 
    private void OnCollisionEnter(Collision other)
    {
-    if(isTransitioning)
+    if(isTransitioning || collisionDisable)
     {
         return;
     }
